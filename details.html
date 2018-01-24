@@ -3,6 +3,9 @@
 <head>
 	<title>AmbiLamp</title>
 	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="details.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+
 </head>
 <body>
 
@@ -15,5 +18,35 @@
 	</ul>
 </header>
 
+<!-- BUTTONS AND CANVASES -->
+<input type="button" id="temp-btn" class="btn" value="View Temperature Chart" onclick="drawTemp()">
+<canvas id="temp-chart-long" class="Chart" width="900" height="350" hidden></canvas>
+<input type="button" id="sound-btn" class="btn" value="View Sound Chart" onclick="drawSound()">
+<canvas id="sound-chart-long" class="Chart" width="900" height="350" hidden></canvas>
+
+<!-- TABLES -->
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<div id="tables-container">
+	<div class="table">
+		<table id="temp-table">
+			<tr>
+				<th>Time</th>
+				<th>Temperature</th>
+				<th>Deviation from Average</th>
+			</tr>
+		</table>
+	</div>
+	<div class="table">
+		<table id="sound-table">
+
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript" src=details.js></script>
 </body>
 </html>

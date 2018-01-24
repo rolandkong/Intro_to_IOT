@@ -1,0 +1,17 @@
+.btn {
+	display: block;
+	border-radius: 5px;
+	border: none;
+	padding: 11px;
+	font-size: 14px;
+	margin: 30px auto;
+	background-color: #465a3f;
+	color: white;
+
+}
+.chart{
+	margin:30px auto;
+}
+.table{
+	margin:30px auto;
+}
