@@ -4,19 +4,14 @@
 	<title>AmbiLamp</title>
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" type="text/css" href="details.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-	<ul>
-		<li><img src="https://www.viesso.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/l/i/lightbox-base-3.jpg"></li>
-		<li><a href="index.html">AmbiLamp</a></li>
-		<li><a href="details.html">Details</a></li>
-	</ul>
-</header>
+<?php
+  include "header.php";
+?>
+
 <!-- BUTTONS AND CANVASES -->
 <input type="button" id="temp-btn" class="btn" value="View Temperature Chart" onclick="drawTemp()">
 <canvas id="temp-chart-long" class="Chart" width="900" height="350" hidden></canvas>
