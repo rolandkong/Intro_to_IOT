@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>AmbiLamp</title>
-	<link rel="stylesheet" type="text/css" href="header.css">
-	<link rel="stylesheet" type="text/css" href="details.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/details.css">
 
 </head>
 <body>
@@ -174,6 +173,6 @@ table, th, td {
 	</div>
 </div>
 
-<script type="text/javascript" src=details.js></script>
+<script type="text/javascript" src="assets/js/details.js"></script>
 </body>
 </html>

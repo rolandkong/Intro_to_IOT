@@ -2,20 +2,28 @@
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+  <script src="jscolor.js"></script>
 </head>
 <body>
 
 <?php
+  include "GPIO.php";
   include "header.php";
+
+  $color = "EFFFC9";
+  if (isset($_POST['set_color'])) {
+    $color = $_POST['color'];
+  }
 ?>
 
 <!-- JSCOLOR PICKER -->
-<input type="button" class="jscolor" id="picker" value="EFFFC9">
+<input type="button" class="jscolor" id="picker" onchange="update(this.jscolor)" onfocusout="apply()" value=<?php echo "'" . $color . "'"; ?>>
 
 <!-- FORM -->
-<form>
-	<input type="text" id="color">
+<form method="POST">
+	<input type="text" id="color" name="color">
+  <input type="submit" id="smt" name="set_color" hidden>
 	<input type="submit" value="Set as Default" id="set_default">
 </form>
 
@@ -41,6 +49,6 @@
 
 </div>
 
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
 </body>
 </html>
