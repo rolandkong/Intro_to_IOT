@@ -8,7 +8,31 @@
 <body>
 
 <?php
-  include "header.php";
+	include "header.php";
+
+	$db = connectMongo();
+	$sounds = $db->sound;
+	$temperatures = $db->temp;
+	$soundCursor = $sounds->find()->sort(array('entry' => -1))->limit(24);
+	$temperatureCursor = $temperature->find()->sort(array('entry' => -1))->limit(24);
+
+	$temperatureX = "[";
+	$temperatureDat = "[";
+	foreach ($temperatureCursor as $doc) {
+		$time = split('[ ]', $doc['time']);
+		$temperatureX = $temperatureX . "'" . $time[1] . "',";
+		$temperatureData = $temperatureData . $doc['val'] . ",";
+	}
+
+	$temperatureX = trim($temperatureX, ",");
+	$temperatureX = $temperature . "]";
+	$temperatureData = trim($temperatureData, ",");
+	$temperatureData = $temperatureData . "]";
+
+	echo "<script>";
+	echo "var temperatureData = " . $temperatureData . ";";
+	echo "var temperatureX = " . $temperatureX . ";";
+	echo "</script>";
 ?>
 
 <!-- BUTTONS AND CANVASES -->

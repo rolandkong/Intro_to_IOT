@@ -1,3 +1,10 @@
+<?php
+	function connectMongo() {
+		$connection = new MongoClient("mongodb://admin:admin@ds062889.mlab.com:62889/introtoiot");
+		$db = $connection->introtoiot;
+		return $db;
+	}
+?>
 <link rel="stylesheet" type="text/css" href="assets/css/header.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 
